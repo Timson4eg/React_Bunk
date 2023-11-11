@@ -1,0 +1,54 @@
+@import '/src/assets/styles/variables';
+
+.wrapper {
+	background-color: $bg-block;
+	border-radius: $radius;
+	margin-top: 30px;
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		padding: 25px;
+
+		> button {
+			border: transparent;
+			border-radius: $radius;
+			color: $white;
+		}
+	}
+	h3 {
+		display: flex;
+		padding: 10px 0 0 20px;
+	}
+	form {
+		margin-top: 30px;
+		display: flex;
+		justify-content: center;
+		input {
+			width: 60%;
+			background-color: $gray;
+			border: 0px;
+			border-radius: 0.7rem 0 0 0.7rem;
+			font-size: 17px;
+			margin-bottom: 0;
+			padding: 12px 20px;
+			color: $white;
+			border: 1px solid transparent;
+			&:focus-within {
+				border-color: rgba($primary, 0.5);
+			}
+		}
+		::placeholder {
+			color: grey;
+		}
+		button {
+			background-color: #917cff;
+			border-radius: 0 0.7rem 0.7rem 0;
+			padding: 15.9px 10px;
+			color: $white;
+			border: transparent;
+			width: 115px;
+			font-size: 18px;
+		}
+	}
+}

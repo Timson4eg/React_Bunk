@@ -1,0 +1,44 @@
+@import '/src/assets/styles/mixins';
+@import '/src/assets/styles/variables';
+
+.auth {
+	margin-top: $gap * 3;
+	display: flex;
+	justify-content: center;
+	margin-top: $gap;
+
+	border-radius: $radius;
+
+	form {
+		background-color: $bg-block;
+		border-radius: $radius;
+		padding: 25px 35px;
+		width: 40%;
+		min-width: 464px;
+		// margin: auto;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+	h1 {
+		text-align: center;
+		font-weight: 600;
+		font-size: 2em;
+		margin-bottom: 1.5em;
+	}
+	footer {
+		text-align: right;
+
+		> button {
+			margin-top: 1rem;
+			background-color: transparent;
+			border: 0;
+			color: rgba(#fff, 70%);
+			font-size: 16px;
+			justify-self: end;
+			&:hover {
+				color: green;
+			}
+		}
+	}
+}

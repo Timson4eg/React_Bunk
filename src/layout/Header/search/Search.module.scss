@@ -1,0 +1,55 @@
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/mixins';
+
+.search {
+	// &:focus-within {
+	// }
+	> .wrapper {
+		// background-color: $bg-block;
+		@include flex-horizontal-center;
+		border-radius: 10px;
+		height: 40px;
+		padding: 12px 10px;
+		position: relative;
+
+		> input {
+			background-color: transparent;
+			border: 0;
+			font-size: 16px;
+			color: $white;
+			&::placeholder {
+				color: $text-gray;
+			}
+		}
+		> svg {
+			margin: 7px;
+			width: 20px;
+			height: 20px;
+			// color: $text-gray;
+			transition: color 0.3s ease-in-out;
+		}
+	}
+}
+
+.list {
+	display: none;
+	height: 0;
+}
+.list.active {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+
+	z-index: 4;
+	align-items: flex-start;
+	margin-top: 10px;
+
+	> div {
+		display: flex;
+		flex-direction: column;
+		border-radius: 10px;
+		padding: 5px;
+		gap: 10px;
+		background-color: white;
+	}
+}

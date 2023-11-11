@@ -1,0 +1,25 @@
+@import '/src/assets/styles/variables';
+
+.myInput {
+	background-color: $background;
+	color: $white;
+	border-radius: $radius;
+	font-size: 16px;
+	padding: 10px;
+	border: 1px solid transparent;
+	padding: 12px 20px;
+	margin-bottom: 1.3rem;
+	display: block;
+	width: 100%;
+
+	&:focus-within {
+		border-color: rgba($primary, 0.5);
+	}
+}
+
+.error {
+	color: red;
+	color: #8d2b3d;
+	font-size: 0.8rem;
+	// margin-top: 0.2rem;
+}

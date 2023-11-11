@@ -1,0 +1,19 @@
+@import '/src/assets/styles/variables';
+
+.wrapper {
+	margin-top: 30px;
+	background-color: $bg-block;
+	border-radius: $radius;
+	display: flex;
+	flex-direction: column;
+
+	> form {
+		padding: 20px;
+		.btns {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 10px;
+			width: 100%;
+		}
+	}
+}

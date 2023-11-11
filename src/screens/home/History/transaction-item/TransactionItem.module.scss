@@ -1,0 +1,114 @@
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/mixins';
+
+.trnasactionItem {
+	@include transition(background-color);
+	display: grid;
+	grid-template-columns: 3fr 2fr 1fr;
+	font-size: 20px;
+	padding: 1.5rem 0;
+	border-bottom: 1px solid rgba($text-gray, 20%);
+	cursor: default;
+	// border-radius: $radius;
+	padding-left: 20px;
+	animation-name: slideIn;
+	animation-duration: 1s;
+
+	.expense {
+		display: flex;
+		gap: 10px;
+		text-transform: capitalize;
+		> div {
+			background-color: $secondary;
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			justify-content: center;
+			> svg {
+				color: $text-gray;
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+	.income {
+		display: flex;
+		gap: 10px;
+		text-transform: capitalize;
+		> div {
+			background-color: $primary;
+
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+
+			> svg {
+				margin-top: 3px;
+				color: $text-gray;
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+
+	.date {
+		display: flex;
+		gap: 10px;
+		> div {
+			background-color: #1e1f23;
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			> svg {
+				color: $text-gray;
+				width: 25px;
+				height: 25px;
+			}
+		}
+	}
+}
+
+@keyframes slideIn {
+	from {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	70% {
+		transform: translateX(20px);
+	}
+
+	90% {
+		opacity: 1;
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@media (max-width: 450px) {
+	.trnasactionItem {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+
+		gap: 40px;
+
+		.expense {
+			padding: 5px 0px;
+		}
+		.income {
+			padding: 5px 0px;
+		}
+		.date {
+			display: none;
+		}
+		// padding: 5px;
+		// display: flex;
+		// flex-direction: column;
+		// text-align: center;
+	}
+}

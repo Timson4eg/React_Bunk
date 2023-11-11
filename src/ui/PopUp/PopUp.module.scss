@@ -1,0 +1,47 @@
+@import '/src/assets/styles/variables';
+.popUp {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 5;
+	display: none;
+}
+.wrapper {
+	background-color: $white;
+	border: 1px solid black;
+	padding: 25px;
+	border-radius: 13px;
+	min-width: 500px;
+	h3 {
+		color: black;
+	}
+	form {
+		input {
+			min-width: 100%;
+			padding: 3px 0 3px 3px;
+			// padding-top: 5px;
+			// padding-bottom: 5px;
+		}
+		> div {
+			display: flex;
+			margin-top: 20px;
+			justify-content: flex-end;
+			button {
+				border: transparent;
+				background: transparent;
+				padding: 5px 10px;
+			}
+		}
+	}
+}
+.form {
+}
+
+.popUp.active {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

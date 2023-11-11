@@ -1,0 +1,23 @@
+@import '/src/assets/styles/variables';
+
+.home {
+	display: grid;
+	grid-template-columns: 2.2fr 1fr;
+	gap: $gap;
+}
+
+@media (max-width: 1000px) {
+	.home {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: $gap;
+	}
+	@media (max-width: 450px) {
+		.home {
+			padding: 5px;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+}

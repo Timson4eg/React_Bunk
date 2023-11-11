@@ -1,0 +1,55 @@
+@import '/src/assets/styles/variables';
+@import '/src/assets/styles/mixins';
+
+.statistic {
+	background-color: $bg-block;
+	border-radius: $radius;
+	// width: 431px;
+	height: 550px;
+	h3 {
+		font-size: 24px;
+		display: flex;
+		padding: 0.5rem 1.2rem;
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	.circleChart {
+		@include flex-horizontal-center;
+		justify-content: center;
+		background-color: $gray;
+		padding: 0.5rem 1.2rem;
+		border-radius: $radius;
+		width: max-content;
+		margin: 0 auto 1.6rem;
+	}
+
+	.sign {
+		display: flex;
+		margin: 0 20px 10px 20px;
+		gap: 5%;
+		background-color: grey;
+		border-radius: $radius;
+		padding: 15px 0 15px 15px;
+		text-align: center;
+		align-items: center;
+		color: $background;
+
+		h4 {
+			font-size: 15px;
+			font-weight: 400;
+		}
+		span {
+			font-size: 20px;
+			font-weight: 600;
+		}
+	}
+	.purple {
+		background-color: #917cff;
+	}
+	.green {
+		background-color: rgba(8, 240, 200, 0.8);
+	}
+}

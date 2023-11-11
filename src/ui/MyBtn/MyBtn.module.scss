@@ -1,0 +1,19 @@
+@import '/src/assets/styles/variables';
+.btn {
+	background-color: $gray;
+	color: $white;
+	border-radius: $radius;
+	padding: 12px 30px;
+	font-size: 18px;
+	font-weight: 500;
+	text-transform: capitalize;
+	border: 0;
+}
+.purple {
+	background-color: #917cff;
+}
+.green {
+	background-color: rgba(8, 240, 200, 0.8);
+}
+//    : #917cff;
+// $secondary: #08f0c8;

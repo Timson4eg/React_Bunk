@@ -1,0 +1,47 @@
+@import '/src/assets/styles/variables';
+.usetItem {
+	display: flex;
+	background-color: lighten($gray, 7%);
+	border: transparent;
+	border-radius: 13px;
+	padding: 5px 15px;
+	font-size: 17px;
+	align-items: center;
+	color: $white;
+	cursor: pointer;
+
+	&:hover {
+		background-color: lighten($gray, 7%);
+	}
+
+	&:disabled {
+		cursor: default;
+	}
+	&:not(:disabled) {
+		// @include transition(background-color);
+
+		// &:hover {
+		// 	background-color: lighten($gray, 7%);
+		// }
+	}
+
+	// &.grey {
+	// 	background-color: $gray;
+	// }
+	&:disabled {
+		cursor: default;
+	}
+	> img {
+		border-radius: 50%;
+		width: 30px;
+		width: 30px;
+		margin-right: 5px;
+	}
+	> span {
+		margin-left: 5px;
+	}
+}
+
+.grey {
+	background-color: #0f1112;
+}

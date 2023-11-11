@@ -1,0 +1,27 @@
+.wrapper {
+	position: relative;
+
+	button {
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+
+	> button {
+		font-size: 27px;
+
+		> svg > path {
+			fill: black;
+		}
+	}
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
