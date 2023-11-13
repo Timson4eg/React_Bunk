@@ -8,6 +8,7 @@ import AuthService from '../../services/Auth.service'
 export const useAuthPage = () => {
 	const [type, setType] = useState('login')
 	const { isAuth, setIsAuth } = useAuth()
+	const [btnSubmitState, setBtnSubmitState] = useState(true)
 
 	const navigate = useNavigate()
 	const {
@@ -30,12 +31,15 @@ export const useAuthPage = () => {
 			}
 		}
 	)
+	// useEffect(()=>{
 
+	// },[setIsAuth])
 	useEffect(() => {
 		if (isAuth) navigate('/')
 	}, [setIsAuth])
 
 	const onSubmit = data => {
+		btnSubmitState ? (type = 'register') : (type = 'login')
 		mutate(data)
 	}
 	return useMemo(
@@ -45,8 +49,10 @@ export const useAuthPage = () => {
 			errors,
 			reset,
 			setType,
-			handleSubmit
+			handleSubmit,
+			btnSubmitState,
+			setBtnSubmitState
 		}),
-		[isLoading, errors]
+		[isLoading, errors, btnSubmitState]
 	)
 }

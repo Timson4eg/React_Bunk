@@ -7,11 +7,15 @@
 	justify-content: center;
 	margin-top: $gap;
 
-	border-radius: $radius;
+	.authWnidow {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-radius: $radius;
+		background-color: $bg-block;
+	}
 
 	form {
-		background-color: $bg-block;
-		border-radius: $radius;
 		padding: 25px 35px;
 		width: 40%;
 		min-width: 464px;
@@ -26,9 +30,10 @@
 		font-size: 2em;
 		margin-bottom: 1.5em;
 	}
-	footer {
+	.footer {
+		width: 90%;
 		text-align: right;
-
+		padding-bottom: 5px;
 		> button {
 			margin-top: 1rem;
 			background-color: transparent;
