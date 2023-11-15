@@ -4,7 +4,7 @@ export function useDonat({ data }) {
 		donutWidth: 50,
 		gap: 15
 	}
-	console.log(data)
+
 	// вычисляет общую сумму значений сегментов.
 	function calculateTotalValue() {
 		// return data.data.reduce()
@@ -102,7 +102,7 @@ export function useDonat({ data }) {
 		const g = createSvgGroupElement()
 		createSvgPathElements(g)
 		svg.appendChild(g)
-		console.log(svg)
+
 		return svg
 	}
 

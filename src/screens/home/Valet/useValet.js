@@ -17,28 +17,29 @@ export const useValet = () => {
 
 	const [btnType, setBtnType] = useState('')
 
-	const { mutate: withdrawal } = useMutation(
-		['withDrawl balance'],
-		amount => UpdagteService.withDrawl(amount),
-		{
-			onSuccess: () => {
-				client.invalidateQueries({ queryKey: ['get profil'] })
-			}
-		}
-	)
-	const { mutate: topUp } = useMutation(
+	// const { mutate: withdrawal } = useMutation(
+	// 	['action'],
+	// 	amount => UpdagteService.withDrawl(amount),
+	// 	{
+	// 		onSuccess: () => {
+	// 			client.invalidateQueries({ queryKey: ['get profil'] })
+	// 		}
+	// 	}
+	// )
+	const { mutate, isSuccess } = useMutation(
 		['topup balance'],
-		amount => UpdagteService.topUp(amount),
+		({ amount, path }) => UpdagteService.action({ amount }, path),
 		{
 			onSuccess: () => {
-				client.invalidateQueries({ queryKey: ['get profil'] })
+				client.invalidateQueries({ queryKey: ['get profil'] }, 'withdrawal')
 			}
 		}
 	)
 
 	const onSubmit = data => {
-		if (btnType === 'purple') topUp({ amount: Number(data.amount) })
-		else withdrawal({ amount: Number(data.amount) })
+		if (btnType === 'purple')
+			mutate({ amount: Number(data.amount), path: 'top-up' })
+		else mutate({ amount: Number(data.amount), path: 'withdrawal' })
 
 		reset()
 	}
@@ -59,6 +60,7 @@ export const useValet = () => {
 		reset,
 		onSubmit,
 		purpleBtn,
-		greenBtn
+		greenBtn,
+		isSuccess
 	}
 }

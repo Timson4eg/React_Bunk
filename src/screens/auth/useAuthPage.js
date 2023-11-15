@@ -31,15 +31,13 @@ export const useAuthPage = () => {
 			}
 		}
 	)
-	// useEffect(()=>{
 
-	// },[setIsAuth])
 	useEffect(() => {
 		if (isAuth) navigate('/')
 	}, [setIsAuth])
 
 	const onSubmit = data => {
-		btnSubmitState ? (type = 'register') : (type = 'login')
+		btnSubmitState ? setType('login') : setType('register')
 		mutate(data)
 	}
 	return useMemo(

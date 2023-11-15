@@ -1,0 +1,49 @@
+@import '/src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.notification {
+	position: fixed;
+	top: 3em;
+	right: 3em;
+	background-color: rgb(255 74 74);
+	border-radius: $radius;
+	padding: 0.7em 1.4em;
+	box-shadow: rgba(0, 0, 0, 0.16);
+	cursor: default;
+	z-index: 5;
+	// display: block;
+	animation: slideIn 4s;
+
+	&.error,
+	&.success {
+		display: block;
+	}
+
+	&.success {
+		background-color: #2e8677;
+	}
+
+	@keyframes slideIn {
+		from {
+			transform: translateX(200px);
+			opacity: 0;
+		}
+
+		20% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+		70% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+		90% {
+			transform: translateX(200px);
+			opacity: 0;
+		}
+		to {
+			transform: translateX(200px);
+			opacity: 0;
+		}
+	}
+}

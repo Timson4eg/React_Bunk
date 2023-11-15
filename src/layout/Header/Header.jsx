@@ -9,8 +9,14 @@ import { useContacts } from '../../hooks/useContacts'
 import Loader from '../../ui/Loader/Loader'
 import LittleHeader from './menu/LittleHeader'
 
-const Header = ({ name, avatarPath }) => {
-	const { isAuth } = useAuth()
+const Header = ({
+	name,
+	avatarPath,
+	callBackSearch,
+	setChoisedUser,
+	children
+}) => {
+	const { isAuth, setToCardNumber, toCardNumber } = useAuth()
 	const { isLoading } = useContacts()
 
 	if (isLoading) return <Loader />
@@ -19,13 +25,17 @@ const Header = ({ name, avatarPath }) => {
 		return (
 			<div>
 				{isLoading && <Loader />}
-				{/* <LittleHeader name={name} avatarPath={avatarPath}></LittleHeader> */}
+
 				<div className={styles.wrapper}>
 					<Logo>Bunk</Logo>
+					{children}
 
 					<div className={styles.rightSide}>
 						<div>
-							<Search />
+							<Search
+								setToCardNumber={setToCardNumber}
+								toCardNumber={toCardNumber}
+							/>
 						</div>
 
 						<UserItem

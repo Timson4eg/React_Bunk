@@ -4,6 +4,7 @@
 	display: grid;
 	grid-template-columns: 2.2fr 1fr;
 	gap: $gap;
+	margin-top: 40px;
 }
 
 @media (max-width: 1000px) {

@@ -6,13 +6,14 @@ import Loader from '../../../ui/Loader/Loader'
 import UserItem from '../../../ui/user-item/UserItem'
 import cn from 'clsx'
 import { useTransfer } from '../../../screens/home/TransferMoney/useTransfer'
+import { useAuth } from '../../../hooks/useAuth'
 
-const Search = () => {
-	// const { data, isLoading, fillInput } = useTransfer()
+const Search = ({ setToCardNumber, toCardNumber }) => {
 	const { data, isLoading } = useContacts()
 
 	const [searchQuery, setSearchQuery] = useState('')
 	const { newUsers } = useSort(data, searchQuery)
+	console.log(toCardNumber)
 
 	const [visibleMenu, setVisibleMenu] = useState(false)
 
@@ -62,7 +63,13 @@ const Search = () => {
 							avatarPath={user.avatarPath}
 							type={'grey'}
 							key={user.id}
-							clickHandler={() => {}}
+							clickHandler={() => {
+								setToCardNumber(user.card.number)
+								console.log(toCardNumber)
+							}}
+							onClick={() => {
+								console.log(2)
+							}}
 						></UserItem>
 					))}
 				</div>

@@ -1,12 +1,15 @@
 import { useForm } from 'react-hook-form'
 import { useTransfer } from '../../screens/home/TransferMoney/useTransfer'
 
-export const usePopUp = (setVisiblePopUp, fromCardNumber) => {
+export const usePopUp = (setVisiblePopUp, fromCardNumber, callback) => {
 	const { handleSubmit, register, formState: errors, reset } = useForm()
-	const { mutate } = useTransfer()
+	const { mutate, isSuccess, error } = useTransfer(callback)
 
 	const onSubmit = data => {
 		mutate(Number(data.amount), fromCardNumber)
+		if (error) callback(false)
+		else callback(true)
+
 		reset()
 		setVisiblePopUp(false)
 	}
@@ -14,6 +17,7 @@ export const usePopUp = (setVisiblePopUp, fromCardNumber) => {
 		onSubmit,
 		handleSubmit,
 		register,
-		errors
+		errors,
+		isSuccess
 	}
 }

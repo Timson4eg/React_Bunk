@@ -10,8 +10,10 @@ const BtnLogOut = () => {
 	const { isAuth, setIsAuth } = useAuth()
 	const logOutBtn = () => {
 		Cookies.remove(TOKEN)
+
 		setIsAuth(false)
 		navigate('/auth')
+		window.location.reload()
 	}
 	return (
 		<button className={styles.btn} onClick={() => logOutBtn()}>

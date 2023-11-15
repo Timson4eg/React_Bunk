@@ -12,7 +12,7 @@ const History = () => {
 	const { data, isLoading, arr } = useHistory(list, setList)
 
 	if (isLoading) return <Loader />
-	console.log(arr)
+
 	return (
 		<div className={styles.wrapper}>
 			{isLoading && <Loader />}
@@ -30,7 +30,6 @@ const History = () => {
 				<button
 					onClick={() => {
 						setList(!list)
-						console.log(data)
 					}}
 				>
 					more

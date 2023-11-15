@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
 import styles from './Valet.module.scss'
 import MyInput from '../../../ui/MyInput/MyInput'
 import MyBtn from '../../../ui/MyBtn/MyBtn'
-import { useForm } from 'react-hook-form'
-import { useMutation } from '@tanstack/react-query'
-import UpdagteService from '../../../services/Updagte.service'
+
 import { useValet } from './useValet'
 
 const Valet = () => {
-	const { register, handleSubmit, errors, onSubmit, purpleBtn, greenBtn } =
-		useValet()
+	const {
+		register,
+		handleSubmit,
+		errors,
+		onSubmit,
+		purpleBtn,
+		greenBtn,
+		isSuccess
+	} = useValet()
 
 	return (
 		<div className={styles.wrapper}>
@@ -34,7 +38,5 @@ const Valet = () => {
 		</div>
 	)
 }
-// (event) => {
-// 						this.updateBalance(event, 'Withrdrawl')
-// 					}
+
 export default Valet

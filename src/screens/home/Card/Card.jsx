@@ -11,17 +11,18 @@ import { useAuth } from '../../../hooks/useAuth'
 const Card = () => {
 	const { data, isLoading } = useProfil()
 
-	if (isLoading) return <Loader />
-
 	return (
 		<div className={styles.wrapper}>
-			<CardNumber>{data.card.number}</CardNumber>
-
-			<Date>{data.card.expireDate}</Date>
-
-			<Cvc>{data.card.cvc}</Cvc>
-
-			<Balance>{data.card.balance}</Balance>
+			{isLoading ? (
+				<Loader />
+			) : (
+				<>
+					<CardNumber>{data.card.number}</CardNumber>
+					<Date>{data.card.expireDate}</Date>
+					<Cvc>{data.card.cvc}</Cvc>
+					<Balance>{data.card.balance}</Balance>
+				</>
+			)}
 		</div>
 	)
 }

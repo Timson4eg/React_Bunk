@@ -5,13 +5,21 @@ import { useTransfer } from '../../screens/home/TransferMoney/useTransfer'
 import { useAuth } from '../../hooks/useAuth'
 import { useHistory } from '../../screens/home/History/useHistory'
 import { usePopUp } from './usePopUp'
+import Notfication from '../Notfication/Notfication'
 
-const PopUp = ({ visiblePopUp, setVisiblePopUp, fromCardNumber }) => {
-	const { updatePage, setUpdatePage } = useAuth()
-	const { onSubmit, handleSubmit, register, errors } = usePopUp(
+const PopUp = ({
+	visiblePopUp,
+	setVisiblePopUp,
+	fromCardNumber,
+	callback,
+	setNotfication
+}) => {
+	const { onSubmit, handleSubmit, register, errors, isSuccess } = usePopUp(
 		setVisiblePopUp,
-		fromCardNumber
+		fromCardNumber,
+		callback
 	)
+
 	const rootClasses = [styles.popUp]
 	if (visiblePopUp) rootClasses.push(styles.active)
 
@@ -33,7 +41,6 @@ const PopUp = ({ visiblePopUp, setVisiblePopUp, fromCardNumber }) => {
 						<button
 							onClick={() => {
 								setVisiblePopUp(false)
-								setUpdatePage(false)
 							}}
 						>
 							Canel

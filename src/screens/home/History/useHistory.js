@@ -16,9 +16,7 @@ export const useHistory = (list, setList) => {
 		const arr = []
 		if (data === undefined) return
 		else {
-			console.log(list)
 			if (list) {
-				console.log(1)
 				data.transactions.forEach((element, index) => {
 					if (index >= 10) return
 					return (arr[index] = element)
@@ -33,8 +31,6 @@ export const useHistory = (list, setList) => {
 		return arr
 	}
 	const arr = updateTransactionsList(list)
-
-	console.log(arr)
 
 	// useEffect(() => {
 	// 	if (data !== undefined) data.transactions = updateTransactionsList()

@@ -8,9 +8,16 @@ import cn from 'clsx'
 const StatisticSvg = ({ data }) => {
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.circleChart}>
+			{data[0].value === null && data[1].value === null ? (
+				<div>Pusto</div>
+			) : (
+				<div className={styles.circleChart}>
+					<Donat data={data} />
+				</div>
+			)}
+			{/* <div className={styles.circleChart}>
 				<Donat data={data} />
-			</div>
+			</div> */}
 
 			<div>
 				<div className={cn(styles.sign, styles.green)}>
