@@ -18,7 +18,7 @@
 	form {
 		padding: 25px 35px;
 		width: 40%;
-		min-width: 464px;
+		min-width: 500px;
 		// margin: auto;
 		display: flex;
 		flex-direction: column;
@@ -44,6 +44,30 @@
 			&:hover {
 				color: green;
 			}
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.auth {
+		margin-top: $gap * 3;
+		display: flex;
+		justify-content: center;
+		margin-top: $gap;
+		form {
+			min-width: 380px;
+		}
+
+		.authWnidow {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: $radius;
+			background-color: $bg-block;
+		}
+
+		.authWnidow {
+			// color: red;
 		}
 	}
 }

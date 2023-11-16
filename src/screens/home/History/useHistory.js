@@ -13,22 +13,22 @@ export const useHistory = (list, setList) => {
 	)
 
 	const updateTransactionsList = list => {
-		const arr = []
+		const historyList = []
 		if (data === undefined) return
 		else {
 			if (list) {
 				data.transactions.forEach((element, index) => {
-					if (index >= 10) return
-					return (arr[index] = element)
+					if (index >= 15) return
+					return (historyList[index] = element)
 				})
 			} else {
 				data.transactions.forEach((element, index) => {
-					return (arr[index] = element)
+					return (historyList[index] = element)
 				})
 			}
 		}
 
-		return arr
+		return historyList
 	}
 	const arr = updateTransactionsList(list)
 

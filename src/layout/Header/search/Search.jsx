@@ -65,11 +65,10 @@ const Search = ({ setToCardNumber, toCardNumber }) => {
 							key={user.id}
 							clickHandler={() => {
 								setToCardNumber(user.card.number)
-								console.log(toCardNumber)
+								setVisibleMenu(false)
+								setSearchQuery('')
 							}}
-							onClick={() => {
-								console.log(2)
-							}}
+							onClick={() => {}}
 						></UserItem>
 					))}
 				</div>
