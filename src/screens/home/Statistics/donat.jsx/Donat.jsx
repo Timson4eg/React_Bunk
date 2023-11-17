@@ -27,7 +27,6 @@ const Donat = ({ data }) => {
 					<path
 						d={atrFirst}
 						fill='none'
-						stroke='undefined'
 						strokeWidth='50'
 						stroke='#08f0c8'
 						className='rotate'
