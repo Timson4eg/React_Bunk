@@ -14,9 +14,9 @@
 		gap: 20px;
 	}
 }
-.logo {
-	padding-left: 20px;
-}
+// .logo {
+// 	padding-left: 20px;
+// }
 @keyframes slideDown {
 	from {
 		opacity: 0;
@@ -43,6 +43,16 @@
 				display: none;
 			}
 		}
+	}
+}
+@media (max-width: 400px) {
+	.wrapper {
+		.rightSide {
+			gap: 5px;
+		}
+	}
+	.logo {
+		// margin-right: 8px;
 	}
 }
 // @media (max-width: 1025px) {
