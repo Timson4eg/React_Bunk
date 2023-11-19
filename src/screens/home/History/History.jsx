@@ -8,7 +8,7 @@ import { useAuth } from '../../../hooks/useAuth'
 import { useHistory } from './useHistory'
 
 const History = () => {
-	const [list, setList] = useState(true)
+	const [list, setList] = useState(0)
 	const { data, isLoading, arr } = useHistory(list, setList)
 
 	if (isLoading) return <Loader />
@@ -27,13 +27,15 @@ const History = () => {
 						key={transaction.id}
 					></TransactionItem>
 				))}
-				<button
-					onClick={() => {
-						setList(!list)
-					}}
-				>
-					more
-				</button>
+				{data.transactions.length > 15 && (
+					<button
+						onClick={() => {
+							setList(!list)
+						}}
+					>
+						more
+					</button>
+				)}
 			</div>
 		</div>
 	)
