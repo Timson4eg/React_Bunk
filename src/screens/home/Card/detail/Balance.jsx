@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../Card.module.scss'
-import { useAuth } from '../../../../hooks/useAuth'
 import { useFormatMoney } from '../../../../utils/useFormatMoney'
 
 const Balance = ({ children }) => {

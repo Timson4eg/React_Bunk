@@ -4,9 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import AuthService from '../../services/Auth.service'
-import { TOKEN } from '../../api'
-import Cookies from 'js-cookie'
-import { useCheckToken } from '../../hooks/useCheckToken'
 
 export const useAuthPage = () => {
 	const [type, setType] = useState('login')

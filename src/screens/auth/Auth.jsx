@@ -6,7 +6,6 @@ import MyBtn from '../../ui/MyBtn/MyBtn'
 import { useAuthPage } from './useAuthPage'
 
 import Logo from '../../layout/Header/Logo/Logo'
-import { useAuth } from '../../hooks/useAuth'
 
 const Auth = () => {
 	const {
