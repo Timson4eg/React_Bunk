@@ -13,7 +13,6 @@ import { useAuth } from '../../hooks/useAuth'
 
 import PopUp from '../../ui/PopUp/PopUp'
 import { useNavigate } from 'react-router-dom'
-import { useHistory } from './History/useHistory'
 
 const Home = () => {
 	const { isAuth, updateComponent, setUpdateComponent } = useAuth()

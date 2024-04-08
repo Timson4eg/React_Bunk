@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query'
-import { useEffect, useMemo, useState } from 'react'
 import UserService from '../../services/User.service'
 
 export const useProfil = () => {

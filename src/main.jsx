@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import './assets/styles/index.scss'
 import Router from './routes/Routes.jsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import AuthProviders, { AuthContext } from './provoders/AuthProviders.jsx'
+import AuthProviders from './provoders/AuthProviders.jsx'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -15,9 +15,9 @@ const queryClient = new QueryClient({
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-	<AuthProviders>
-		<QueryClientProvider client={queryClient}>
+	<QueryClientProvider client={queryClient}>
+		<AuthProviders>
 			<Router />
-		</QueryClientProvider>
-	</AuthProviders>
+		</AuthProviders>
+	</QueryClientProvider>
 )

@@ -13,7 +13,6 @@ const Search = ({ setToCardNumber, toCardNumber }) => {
 
 	const [searchQuery, setSearchQuery] = useState('')
 	const { newUsers } = useSort(data, searchQuery)
-	console.log(toCardNumber)
 
 	const [visibleMenu, setVisibleMenu] = useState(false)
 

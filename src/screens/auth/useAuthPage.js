@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { useMutation } from '@tanstack/react-query'
 import AuthService from '../../services/Auth.service'
+import { TOKEN } from '../../api'
+import Cookies from 'js-cookie'
+import { useCheckToken } from '../../hooks/useCheckToken'
 
 export const useAuthPage = () => {
 	const [type, setType] = useState('login')
@@ -25,6 +28,7 @@ export const useAuthPage = () => {
 		},
 		{
 			onSuccess: data => {
+				console.log(1)
 				setIsAuth(true)
 				navigate('/')
 				reset()
@@ -33,6 +37,7 @@ export const useAuthPage = () => {
 	)
 
 	useEffect(() => {
+		console.log(1)
 		if (isAuth) navigate('/')
 	}, [setIsAuth])
 

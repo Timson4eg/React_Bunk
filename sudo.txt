@@ -1,0 +1,192 @@
+Last login: Fri Nov 17 15:02:19 on ttys015
+timurnazipov@MacBook-Pro-Timur ~ % ssh root@90.156.229.101
+root@90.156.229.101's password: 
+Permission denied, please try again.
+root@90.156.229.101's password: 
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-88-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Nov 18 03:24:40 AM MSK 2023
+
+  System load:  0.0087890625       Processes:             107
+  Usage of /:   20.0% of 29.44GB   Users logged in:       0
+  Memory usage: 17%                IPv4 address for eth0: 90.156.229.101
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sat Nov 18 02:02:56 2023 from 98.152.191.94
+root@2193669-uv23981:~# su - timson 
+timson@2193669-uv23981:~$ pm2 log
+[TAILING] Tailing last 15 lines for [all] processes (change the value with --lines option)
+/home/timson/.pm2/pm2.log last 15 lines:
+PM2        | 2023-11-18T03:10:54: PM2 log: Stopping app:client id:3
+PM2        | 2023-11-18T03:10:54: PM2 log: App [client:3] exited with code [0] via signal [SIGINT]
+PM2        | 2023-11-18T03:10:54: PM2 log: pid=5560 msg=process killed
+PM2        | 2023-11-18T03:11:16: PM2 log: App [client:0] starting in -fork mode-
+PM2        | 2023-11-18T03:11:16: PM2 log: App [client:0] online
+PM2        | 2023-11-18T03:13:33: PM2 log: App [client:1] starting in -fork mode-
+PM2        | 2023-11-18T03:13:33: PM2 log: App [client:1] online
+PM2        | 2023-11-18T03:14:17: PM2 log: Stopping app:client id:0
+PM2        | 2023-11-18T03:14:17: PM2 log: Stopping app:client id:1
+PM2        | 2023-11-18T03:14:17: PM2 log: App [client:0] exited with code [0] via signal [SIGINT]
+PM2        | 2023-11-18T03:14:17: PM2 log: App [client:1] exited with code [0] via signal [SIGINT]
+PM2        | 2023-11-18T03:14:17: PM2 log: pid=5649 msg=process killed
+PM2        | 2023-11-18T03:14:17: PM2 log: pid=5726 msg=process killed
+PM2        | 2023-11-18T03:14:24: PM2 log: App [client:0] starting in -fork mode-
+PM2        | 2023-11-18T03:14:24: PM2 log: App [client:0] online
+
+/home/timson/.pm2/logs/client-error.log last 15 lines:
+0|client   | error Couldn't find a package.json file in "/home/timson/tipa-bunk"
+0|client   | error Couldn't find a package.json file in "/home/timson/tipa-bunk"
+
+/home/timson/.pm2/logs/client-out.log last 15 lines:
+0|client   | $ vite preview
+0|client   |   ➜  Local:   http://localhost:4173/
+0|client   |   ➜  Network: use --host to expose
+0|client   | yarn run v1.22.21
+0|client   | info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+0|client   | yarn run v1.22.21
+0|client   | info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+0|client   | yarn run v1.22.21
+0|client   | $ vite preview
+0|client   |   ➜  Local:   http://localhost:4173/
+0|client   |   ➜  Network: use --host to expose
+0|client   | yarn run v1.22.21
+0|client   | $ vite preview
+0|client   |   ➜  Local:   http://localhost:4173/
+0|client   |   ➜  Network: use --host to expose
+
+^C
+timson@2193669-uv23981:~$ 
+timson@2193669-uv23981:~$ ls
+tipa-bunk
+timson@2193669-uv23981:~$ cd typa-bunk
+-bash: cd: typa-bunk: No such file or directory
+timson@2193669-uv23981:~$ ls
+tipa-bunk
+timson@2193669-uv23981:~$ cd tipa-bunk
+timson@2193669-uv23981:~/tipa-bunk$ ls
+First_React_Bunk  typaBunk
+timson@2193669-uv23981:~/tipa-bunk$ sudo apt update
+/etc/sudoers:55:3: syntax error
+^X
+  ^
+[sudo] password for timson: 
+Hit:1 http://zabbix.repo.timeweb.ru/ubuntu focal InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu jammy InRelease                   
+Get:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]
+Hit:5 http://archive.ubuntu.com/ubuntu jammy-backports InRelease    
+Get:6 http://security.ubuntu.com/ubuntu jammy-security/main amd64 Packages [953 kB]
+Get:7 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 Packages [1,162 kB]
+Get:8 http://security.ubuntu.com/ubuntu jammy-security/multiverse amd64 Packages [36.5 kB]
+Get:9 http://archive.ubuntu.com/ubuntu jammy-updates/main Translation-en [248 kB]
+Get:10 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 Packages [998 kB]
+Get:11 http://archive.ubuntu.com/ubuntu jammy-updates/universe Translation-en [219 kB]
+Get:12 http://archive.ubuntu.com/ubuntu jammy-updates/multiverse amd64 Packages [41.6 kB]
+Fetched 3,887 kB in 2s (1,587 kB/s)                    
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+7 packages can be upgraded. Run 'apt list --upgradable' to see them.
+timson@2193669-uv23981:~/tipa-bunk$ sudo -l
+/etc/sudoers:55:3: syntax error
+^X
+  ^
+Matching Defaults entries for timson on 2193669-uv23981:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin,
+    use_pty
+
+User timson may run the following commands on 2193669-uv23981:
+    (ALL : ALL) ALL
+timson@2193669-uv23981:~/tipa-bunk$ 
+  [Restored 17 Nov 2023, 16:35:50]
+Last login: Fri Nov 17 16:35:21 on console
+timurnazipov@MacBook-Pro-Timur ~ % ssh root@90.156.229.101
+root@90.156.229.101's password: 
+Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-88-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Nov 18 03:36:17 AM MSK 2023
+
+  System load:  0.080078125        Processes:             110
+  Usage of /:   20.0% of 29.44GB   Users logged in:       1
+  Memory usage: 18%                IPv4 address for eth0: 90.156.229.101
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Applications is not enabled.
+
+6 updates can be applied immediately.
+1 of these updates is a standard security update.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Sat Nov 18 03:24:41 2023 from 98.152.191.94
+root@2193669-uv23981:~# su - timson 
+timson@2193669-uv23981:~$ visudo
+visudo: /etc/sudoers: Permission denied
+timson@2193669-uv23981:~$ su - root
+Password: 
+root@2193669-uv23981:~# visudo
+/etc/sudoers:55:3: syntax error
+^X
+  ^
+/etc/sudoers:55:3: syntax error
+^X
+  ^
+What now? 
+Options are:
+  (e)dit sudoers file again
+  e(x)it without saving changes to sudoers file
+  (Q)uit and save changes to sudoers file (DANGER!)
+
+What now? e
+/etc/sudoers:54:3: syntax error
+^X
+  ^
+What now? e
+
+  GNU nano 6.2                    /etc/sudoers.tmp *                            
+
+# User alias specification
+
+# Cmnd alias specification
+
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+# Members of the admin group may gain root privileges
+%admin ALL=(ALL) ALL
+
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL:ALL) ALL
+
+# See sudoers(5) for more information on "@include" directives:
+
+@includedir /etc/sudoers.d
