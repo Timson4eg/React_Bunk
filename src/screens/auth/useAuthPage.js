@@ -9,6 +9,9 @@ export const useAuthPage = () => {
 	const [type, setType] = useState('login')
 	const { isAuth, setIsAuth } = useAuth()
 	const [btnSubmitState, setBtnSubmitState] = useState(true)
+	const [message, setMessage] = useState('')
+	const [isError, setIsError] = useState(false)
+	const [notificationTimeout, setNotificationTimeout] = useState(null)
 
 	const navigate = useNavigate()
 	const {
@@ -18,25 +21,33 @@ export const useAuthPage = () => {
 		reset
 	} = useForm({ mode: 'onChange' })
 
-	const { mutate, isLoading } = useMutation(
+	const { mutate, isLoading, isSuccess } = useMutation(
 		['auth'],
-		({ email, password }) => {
-			AuthService.main(email, password, type)
-		},
+		({ email, password }) => AuthService.main(email, password, type),
 		{
 			onSuccess: data => {
-				console.log(1)
 				setIsAuth(true)
+				setMessage('Login')
 				navigate('/')
 				reset()
+			},
+			onError: error => {
+				setMessage(error.message[0])
+				setNotification(true)
+				setIsError(true)
+				setTimeout(() => {
+					setIsError(false)
+				}, 3000)
 			}
 		}
 	)
-
 	useEffect(() => {
-		console.log(1)
-		if (isAuth) navigate('/')
-	}, [setIsAuth])
+		return () => {
+			if (notificationTimeout) {
+				clearTimeout(notificationTimeout)
+			}
+		}
+	}, [])
 
 	const onSubmit = data => {
 		btnSubmitState ? setType('login') : setType('register')
@@ -51,8 +62,11 @@ export const useAuthPage = () => {
 			setType,
 			handleSubmit,
 			btnSubmitState,
-			setBtnSubmitState
+			setBtnSubmitState,
+			message,
+			isError,
+			isSuccess
 		}),
-		[isLoading, errors, btnSubmitState]
+		[isLoading, errors, btnSubmitState, isError]
 	)
 }

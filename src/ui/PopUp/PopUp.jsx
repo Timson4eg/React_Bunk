@@ -1,11 +1,6 @@
 import React from 'react'
 import styles from './PopUp.module.scss'
-import { useForm } from 'react-hook-form'
-import { useTransfer } from '../../screens/home/TransferMoney/useTransfer'
-import { useAuth } from '../../hooks/useAuth'
-import { useHistory } from '../../screens/home/History/useHistory'
 import { usePopUp } from './usePopUp'
-import Notfication from '../Notfication/Notfication'
 
 const PopUp = ({
 	visiblePopUp,
@@ -35,6 +30,7 @@ const PopUp = ({
 						{...register('amount', { required: 'amount is requred' })}
 						name='amount'
 						type='number'
+						placeholder='Enter the amount'
 						error={errors?.toCardNumber?.message}
 					></input>
 					<div>
@@ -48,7 +44,6 @@ const PopUp = ({
 						<button
 							onClick={() => {
 								handleSubmit(onSubmit)
-
 								setVisiblePopUp(false)
 							}}
 						>

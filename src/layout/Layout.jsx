@@ -1,17 +1,13 @@
-import React, { useEffect } from 'react'
-
 import Header from './Header/Header'
-import { useCheckToken } from '../hooks/useCheckToken'
 import Logo from './Header/Logo/Logo'
 import { useAuth } from '../hooks/useAuth'
 import { useProfil } from '../screens/home/useProfil'
 import Loader from '../ui/Loader/Loader'
-import Notfication from '../ui/Notfication/Notfication'
+import Notification from '../ui/Notification/Notification'
 
-const Layout = ({ notfication, callBackSearch, setChoisedUser, error }) => {
-	// useCheckToken()
+const Layout = ({ callBackSearch, setSelectedUser, error }) => {
 	const { data, isLoading } = useProfil()
-	const { isAuth } = useAuth()
+	const { isAuth, notification } = useAuth()
 
 	if (!data) return <Loader />
 	if (isLoading) return <Loader />
@@ -25,11 +21,9 @@ const Layout = ({ notfication, callBackSearch, setChoisedUser, error }) => {
 					name={data.name}
 					avatarPath={data.avatarPath}
 					callBackSearch={callBackSearch}
-					setChoisedUser={setChoisedUser}
 				>
-					{/* <Notfication message={'ggWp'} /> */}
-					{error && <Notfication message={'Error'} type={'erorr'} />}
-					{notfication && <Notfication message={'Money is required'} />}
+					{error && <Notification message={'Error'} type={'erorr'} />}
+					{notification && <Notification message={'Money is required'} />}
 				</Header>
 			)}
 		</>

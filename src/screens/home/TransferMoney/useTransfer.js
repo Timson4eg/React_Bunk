@@ -61,12 +61,4 @@ export const useTransfer = setVisiblePopUp => {
 		mutate,
 		normalizeCardNumber
 	}
-	// return useMemo(
-	// 	() => (),
-	// 	[error, errors, isLoading, isSuccess, loadNotfication, status]
-	// )
 }
-
-// useMemo(
-// 	() => ({ 	}),	[error, errors, isLoading, isSuccess]
-// )

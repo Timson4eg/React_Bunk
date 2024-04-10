@@ -5,15 +5,9 @@ export const AuthContext = createContext()
 
 const AuthProviders = ({ children }) => {
 	const [isAuth, setIsAuth] = useState(!!Cookies.get(TOKEN))
-
+	const [notification, setNotification] = useState(false)
+	const [error, setError] = useState()
 	const [toCardNumber, setToCardNumber] = useState('')
-
-	// useEffect(() => {
-	// 	const token = Cookies.get()
-	// 	if (token.qqyopta) {
-	// 		console.log(token.qqyopta)
-	// 	}
-	// }, [isAuth])
 
 	return (
 		<AuthContext.Provider
@@ -21,7 +15,11 @@ const AuthProviders = ({ children }) => {
 				isAuth,
 				setIsAuth,
 				toCardNumber,
-				setToCardNumber
+				setToCardNumber,
+				notification,
+				setNotification,
+				error,
+				setError
 			}}
 		>
 			{children}

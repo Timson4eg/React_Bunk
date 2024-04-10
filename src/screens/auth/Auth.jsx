@@ -6,6 +6,8 @@ import MyBtn from '../../ui/MyBtn/MyBtn'
 import { useAuthPage } from './useAuthPage'
 
 import Logo from '../../layout/Header/Logo/Logo'
+import Notification from '../../ui/Notification/Notification'
+import { useEffect } from 'react'
 
 const Auth = () => {
 	const {
@@ -14,14 +16,18 @@ const Auth = () => {
 		errors,
 		handleSubmit,
 		btnSubmitState,
-		setBtnSubmitState
+		setBtnSubmitState,
+		message,
+		isError
 	} = useAuthPage()
 
 	return (
 		<>
+			{isError && <Notification message={message} type={'error'} />}
+
 			<Logo />
 			<div className={styles.auth}>
-				<div className={styles.authWnidow}>
+				<div className={styles.authWindow}>
 					<form onSubmit={handleSubmit(onSubmit)}>
 						{btnSubmitState ? <h1>SignIn</h1> : <h1>Register</h1>}
 

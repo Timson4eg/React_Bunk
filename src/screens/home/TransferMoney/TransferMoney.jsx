@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from 'react'
 import styles from './TransferMoney.module.scss'
 import UserItem from '../../../ui/user-item/UserItem'
-import { useQueries, useQuery } from '@tanstack/react-query'
-import UserService from '../../../services/User.service'
+
 import Loader from '../../../ui/Loader/Loader'
 import { useTransfer } from './useTransfer'
-import Notfication from '../../../ui/Notfication/Notfication'
-import { useCardFormat } from '../../../utils/useCardFormat'
 
 const TransferMoney = ({ setVisiblePopUp }) => {
 	const {
@@ -20,18 +16,17 @@ const TransferMoney = ({ setVisiblePopUp }) => {
 		isSuccess,
 		normalizeCardNumber
 	} = useTransfer(setVisiblePopUp)
+	//What Javascript statement in place of "?" will make the result always be between 6 and 7?
 
 	if (isLoading) return <Loader />
 	return (
 		<div className={styles.wrapper}>
-			{isSuccess && <Notfication message={'qqyopt'} />}
 			<h3>Transfer Money</h3>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<input
 					placeholder='XXXX-XXXX-XXXX-XXXX'
 					type='tel'
 					error={errors?.toCardNumber?.message}
-					// autoComplete='cc-number'
 					{...register('toCardNumber', {
 						required: 'toCardNumber is requred'
 					})}

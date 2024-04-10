@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 // import { TOKEN } from './app.constans'
 
 const API_URL = `${import.meta.env.VITE_SERVER_URL}/api`
-export const TOKEN = 'qqyopta'
+export const TOKEN = 'access'
 
 export const $axios = axios.create({
 	baseURL: API_URL,

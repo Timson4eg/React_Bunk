@@ -7,15 +7,8 @@ import UserItem from '../../ui/user-item/UserItem'
 import { useAuth } from '../../hooks/useAuth'
 import { useContacts } from '../../hooks/useContacts'
 import Loader from '../../ui/Loader/Loader'
-import LittleHeader from './menu/LittleHeader'
 
-const Header = ({
-	name,
-	avatarPath,
-	callBackSearch,
-	setChoisedUser,
-	children
-}) => {
+const Header = ({ name, avatarPath, children }) => {
 	const { isAuth, setToCardNumber, toCardNumber } = useAuth()
 	const { isLoading } = useContacts()
 
